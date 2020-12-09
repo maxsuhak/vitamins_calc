@@ -1,0 +1,10 @@
+<h1>
+  Hello <%= current_user.email %>
+  <%= link_to edit_user_registration_path(current_user.id) do %>
+    <% if current_user.height.nil? || current_user.height.nil? %>
+      privide personal info
+    <% else %>
+      edit
+    <% end %>
+  <% end %>
+</h1>

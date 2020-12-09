@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VitaminsCalc</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <style type="text/css">
+      ul.nav li {
+        display: inline;
+        margin-right: 5px;
+        padding: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <% if user_signed_in? %>
+      <ul class='nav'>
+        <li><%= link_to 'dashboard', root_path %></li>
+        <li><%= link_to 'today\'s food intake', food_intake_index_path %></li>
+        <li><%= link_to 'today\'s activity level', activity_level_index_path %></li>
+        <li><%= link_to 'recipes', recipes_path %></li>
+        <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+      </ul>
+    <% end %>
+
+    <% flash.each do |type, msg| %>
+      <ul>
+        <li>
+          <%= msg %>
+        </li>
+      </ul>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

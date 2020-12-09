@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: 127.0.0.1
+  username: postgres
+  password:
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: vitamins_calc_development
+  url: <%= ENV['DATABASE_URL'] %>
+
+test:
+  <<: *default
+  database: vitamins_calc_test
+  url: <%= ENV['DATABASE_URL'] %>
+
+production:
+  <<: *default
+  database: vitamins_calc_production
+  username: vitamins_calc
+  password: <%= ENV['VITAMINS_CALC_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

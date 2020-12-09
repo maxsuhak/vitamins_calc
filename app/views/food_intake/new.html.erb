@@ -1,0 +1,26 @@
+<h1>New Food Intake</h1>
+
+<%= form_with model: @food_intake, url: food_intake_index_path do |f| %>
+  <div class="field">
+    <%= f.label :vitamin_c %><br />
+    <%= f.number_field :vitamin_c, in: 4..10, step: 1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vitamin_d3 %><br />
+    <%= f.number_field :vitamin_d3, in: 4..10, step: 1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :iron %><br />
+    <%= f.number_field :iron, in: 4..10, step: 1 %>
+  </div>
+
+  <br />
+
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
+
+<%= link_to "Back", :back %>

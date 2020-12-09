@@ -1,0 +1,6 @@
+<h1>Show Recipe <small>for <%= @data['date'] %></small></h1>
+Vitamin C <%= @data['vitamin_c'] %> ( current level is <%= "#{@data['food_intake_vitamin_c']} - #{@data['activity_level_vitamin_c']} = #{@data['vitamin_c_diff']}" %> )
+<br />
+Vitamin D3 <%= @data['vitamin_d3'] %> ( current level is <%= "#{@data['food_intake_vitamin_d3']} - #{@data['activity_level_vitamin_d3']} = #{@data['vitamin_d3_diff']}" %> )
+<br />
+Vitamin Iron <%= @data['iron'] %> ( current level is <%= "#{@data['food_intake_iron']} - #{@data['activity_level_iron']} = #{@data['iron_diff']}" %> )

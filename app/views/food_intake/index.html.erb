@@ -1,0 +1,22 @@
+<h1>Today's food intake activity</h1>
+<%= link_to 'enter more', new_food_intake_path %>
+<table>
+  <thead>
+    <tr>
+      <th>Vitamin C</th>
+      <th>Vitamin D3</th>
+      <th>iron</th>
+      <th>Created Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @food_intakes.each do |fi| %>
+      <tr>
+        <td><%= fi.vitamin_c %></td>
+        <td><%= fi.vitamin_d3 %></td>
+        <td><%= fi.iron %></td>
+        <td><%= fi.created_at.strftime('%d/%m/%Y %H:%M') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

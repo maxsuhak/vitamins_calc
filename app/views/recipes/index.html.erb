@@ -1,0 +1,26 @@
+<h1>Recipes History</h1>
+
+<%= link_to 'generate totays recipe', recipes_path, method: :post %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vitamin C</th>
+      <th>Vitamin D3</th>
+      <th>iron</th>
+      <th>Created Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipes.each do |fi| %>
+      <tr>
+        <td><%= fi.vitamin_c %></td>
+        <td><%= fi.vitamin_d3 %></td>
+        <td><%= fi.iron %></td>
+        <td><%= fi.created_at.strftime('%d/%m/%Y %H:%M') %></td>
+        <td><%= link_to 'show', recipe_path(fi) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
